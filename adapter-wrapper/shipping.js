@@ -10,17 +10,25 @@
 function Shipping() {
   this.request = function(zipStart, zipEnd, weight) {
     // ...
-    return "$49.75"
-  }
+    return '$49.75';
+  };
 }
 
 //new interface
 
-function AdvancedShipping(){
-  this.login = function(credentials) { /* ... */ };
-  this.setStart = function(start) { /* ... */ };
-  this.setDestination = function(destination) { /* ... */ };
-  this.calculate = function(weight) { return "$39.50"; };
+function AdvancedShipping() {
+  this.login = function(credentials) {
+    /* ... */
+  };
+  this.setStart = function(start) {
+    /* ... */
+  };
+  this.setDestination = function(destination) {
+    /* ... */
+  };
+  this.calculate = function(weight) {
+    return '$39.50';
+  };
 }
 
 //adapter interface
@@ -35,8 +43,8 @@ function ShippingAdapter(credentials) {
       shipping.setStart(zipStart);
       shipping.setDestination(zipEnd);
       return shipping.calculate(weight);
-    }
-  }
+    },
+  };
 }
 
 module.exports = { Shipping, ShippingAdapter };
