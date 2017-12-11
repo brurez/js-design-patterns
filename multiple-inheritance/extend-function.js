@@ -45,19 +45,6 @@ extend(WheelChair.prototype, Chair.prototype);
 extend(WheelChair.prototype, Wheel.prototype);
 extend(WheelChair.prototype, Battery); // no prototype
 
-const chair = new Chair(10);
-const wheel = new Wheel('steel');
-const battery = Object.create(Battery);
-
-const wheelChair = new WheelChair(200);
-
-console.log(chair.isTooTall()); //false 10 < 100
-console.log(wheel.isStrong()); //true
-
-console.log(wheelChair.height); // 200
-console.log(wheelChair.isTooTall()); // 200 > 100
-console.log(wheelChair.charge(30));
-console.log('Capacity: ', wheelChair.capacity); // 30
-
-// undefined because function is defined in the constructor
-console.log(typeof wheelChair.isStrong); // undefined
+module.exports = {
+  Chair, Wheel, WheelChair
+};
