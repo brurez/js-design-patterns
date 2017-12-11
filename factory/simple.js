@@ -4,37 +4,38 @@
   This make the rest of the application not aware of having
   to choose the right class to instanciate.
   Can be used to add methods commom to all classes too.
+  It abstract the implementation from the rest of the application
  */
 
-function Factory(){
-  this.create = function(type){
+function Factory() {
+  this.create = function(type) {
     let obj;
-    if(type === 'pdf'){
+    if (type === 'pdf') {
       obj = new Pdf();
-    }else if(type === 'epub'){
+    } else if (type === 'epub') {
       obj = new Epub();
     }
 
-    obj.getExtension = function(){
+    obj.getExtension = function() {
       return this.extension;
     };
 
     return obj;
-  }
+  };
 }
 
-function Pdf(){
+function Pdf() {
   this.extension = 'pdf';
-  this.readFile = function(fileName){
+  this.readFile = function(fileName) {
     return 'This is a Pdf file named ' + fileName;
-  }
+  };
 }
 
-function Epub(fileName){
+function Epub(fileName) {
   this.extension = 'epub';
-  this.readFile = function(fileName){
+  this.readFile = function(fileName) {
     return 'This is a Epub file named ' + fileName;
-  }
+  };
 }
 
 module.exports = Factory;

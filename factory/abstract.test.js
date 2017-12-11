@@ -17,17 +17,19 @@ test('Abstract factory', () => {
 
   expect(factoryCreateRtf).toThrowError('you must register the type');
 
-  function registerInvalidClass(){
-    factory.register('invalid', function(){});
+  function registerInvalidClass() {
+    factory.register('invalid', function() {});
   }
 
   expect(registerInvalidClass).toThrowError('must have readfile function');
 
-  expect(pdf.readFile('resume.pdf'))
-    .toBe('This is a Pdf file named resume.pdf');
+  expect(pdf.readFile('resume.pdf')).toBe(
+    'This is a Pdf file named resume.pdf',
+  );
 
-  expect(epub.readFile('resume.epub'))
-    .toBe('This is a Epub file named resume.epub');
+  expect(epub.readFile('resume.epub')).toBe(
+    'This is a Epub file named resume.epub',
+  );
 
   expect(epub.getExtension()).toBe('epub');
 });
