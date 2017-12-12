@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "jest": "^21.2.1"
+  },
+  "scripts": {
+    "jest": "jest --watch"
   }
 }

@@ -2,10 +2,16 @@
 
 Please feel free to contribute!
 
-Use NodeJS to execute the files independently.
+type in the terminal: 
+`npm run jest` to run all tests
 
-## Singletons
-
-## Factory
-
-## Multiple Inheritance
+## Added so far
+- Adapter / Wrapper
+- Builder
+- Chain of Responsability
+- Composite
+- Factory
+- Mediator
+- Observer
+- Prototype
+- Singleton

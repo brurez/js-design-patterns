@@ -19,4 +19,4 @@ const Test = (function(){
 
 const test = new Test(10);
 test.add();
-test.log();
+console.log(test.getValue());
