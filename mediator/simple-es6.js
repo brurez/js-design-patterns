@@ -42,12 +42,12 @@ const Chatroom = (function(){
 })();
 
 function run() {
-  var yoko = new Participant("Yoko");
-  var john = new Participant("John");
-  var paul = new Participant("Paul");
-  var ringo = new Participant("Ringo");
+  const yoko = new Participant("Yoko");
+  const john = new Participant("John");
+  const paul = new Participant("Paul");
+  const ringo = new Participant("Ringo");
 
-  var chatroom = new Chatroom();
+  const chatroom = new Chatroom();
   chatroom.register(yoko);
   chatroom.register(john);
   chatroom.register(paul);
@@ -59,7 +59,7 @@ function run() {
   paul.send("Ha, I heard that!");
   ringo.send("Paul, what do you think?", paul);
 
-  var chatroom2 = new Chatroom();
+  const chatroom2 = new Chatroom();
 
   console.log('Is same instance: ', chatroom === chatroom2);
 
