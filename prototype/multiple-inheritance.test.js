@@ -1,6 +1,6 @@
-const Chair = require('./extend-function').Chair;
-const Wheel = require('./extend-function').Wheel;
-const WheelChair = require('./extend-function').WheelChair;
+const Chair = require('./multiple-inheritance').Chair;
+const Wheel = require('./multiple-inheritance').Wheel;
+const WheelChair = require('./multiple-inheritance').WheelChair;
 
 test('Multiple Inheritance using a function to extend', () => {
   const chair = new Chair(10);

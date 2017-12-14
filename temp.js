@@ -1,22 +1,18 @@
+'use strict';
 
-const Test = (function(){
+const obj = {
+  f: function(){
+    //console.log(this);
+    const self = this;
 
-  let value;
-
-  return function(initial){
-    value = initial;
-
-    this.add = function() {
-      value++;
-    };
-    this.getValue = function() {
-      return value;
+    function run(){
+      console.log('this', self);
     }
-  };
 
+    return run();
+  },
+  a: 1
+};
 
-})();
+console.log(obj.f());
 
-const test = new Test(10);
-test.add();
-console.log(test.getValue());
