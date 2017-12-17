@@ -1,5 +1,5 @@
-function City(){
-  this.getPopulation = function(city) {
+function City() {
+  this.getPopulation = function (city) {
     city = city.toLowerCase();
     switch (city) {
       case 'santos':
@@ -9,32 +9,30 @@ function City(){
       default:
         return '';
     }
-  }
+  };
 }
 
-function cityProxy(){
-  return (function(){
-    let city;
-    if(!city) city = new City(); // static, singleton
-    let cache;
-    if(!cache) cache = {}; // static
+const proxy = (function () {
+  let city;
+  if (!city) city = new City(); // static, singleton
+  let cache;
+  if (!cache) cache = {}; // static
 
-    return {
-      getPopulation: function(name){
-        if(!cache[name]){
-          cache[name] = city.getPopulation(name);
-        }
-        return cache[name];
-      },
-      _isCached: function (name) {
-        return !!cache[name];
-      },
-      _getCityObj: function () {
-        return city;
+  return {
+    getPopulation: function (name) {
+      if (!cache[name]) {
+        cache[name] = city.getPopulation(name);
       }
-    }
-  })();
+      return cache[name];
+    },
+    _isCached: function (name) {
+      return !!cache[name];
+    },
+    _getCityObj: function () {
+      return city;
+    },
+  };
+})();
 
-}
 
-module.exports = cityProxy();
+module.exports = proxy;
